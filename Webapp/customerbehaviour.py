@@ -24,9 +24,11 @@ def predict():
     print(array_features)
     # Predict features
     prediction = model.predict(array_features)
-    print(prediction)
+    pred = "{:.2f}".format(*prediction)
+    # pred = str(prediction)
+    print(pred)
 
-    return render_template('home.html', result=prediction)
+    return render_template('home.html', result=pred)
 
 
 if __name__ == '__main__':
